@@ -1,0 +1,148 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style-type: none;
+}
+
+img {
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.mx-w {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/************ Product Flex Layout ************/
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 20px;
+    overflow:visible;
+}
+
+.products {
+    width: 300px;
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    transition: 0.2s ease-in-out;
+    text-align: center;
+}
+
+.main .products img {
+    border-radius: 10px;
+    width: 250px;
+    
+}
+
+/************ Quantity Buttons ************/
+.button-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+    min-width: 50px;
+    text-align: center;
+}
+
+.button-group button {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #00bfff;
+    color: white;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+/************ Add to Cart ************/
+.cart button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    border: none;
+    background-color: #f0c14b;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+
+/************ Header ************/
+.header {
+    background-color: #232f3e;
+    color: white;
+}
+
+.amazon img {
+    width: 100px;
+}
+
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav ul {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav li:hover {
+    color: red;
+}
+
+/************ Cart Icon ************/
+.cart img {
+    width: 50px;
+}
+
+.cart-icon {
+    position: relative;
+    display: inline-block;
+}
+
+.cart-count {
+    position: absolute;
+    top: -2px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+/************ Responsive ************/
+@media (max-width: 1000px) {
+    .products {
+        flex: 0 0 calc(50% - 20px); 
+    }
+}
+
+@media (max-width: 600px) {
+    .products {
+        flex: 0 0 100%; 
+    }
+}
+/***********Popup*************/
