@@ -8,6 +8,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: fadeIn 0.3s ease-in-out;
   z-index: 1000;
 }
 
@@ -19,24 +20,32 @@
   max-width: 90%;
   width: 600px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-  animation: popup-fade 0.3s ease-in-out;
+  animation: popupScale 0.3s ease-in-out;
+  position: relative;
 }
 
 /* Close button */
 .close-btn {
-  float: right;
+  position: absolute;
+  right: 15px;
+  top: 10px;
   font-size: 24px;
   background: transparent;
   border: none;
   cursor: pointer;
   color: #333;
-  
+  transition: transform 0.2s;
 }
 
-/* Table*/
+.close-btn:hover {
+  transform: scale(1.2);
+}
+
+/* Table */
 table {
   width: 100%;
   margin-top: 20px;
+  border-collapse: collapse;
 }
 
 th, td {
@@ -60,9 +69,55 @@ td button {
   font-size: 16px;
   cursor: pointer;
   border-radius: 10px;
+  transition: 0.2s;
 }
 
 td button:hover {
-  background-color:rgb(48, 158, 26);
+  background-color: rgb(48, 158, 26);
+  transform: scale(1.1);
 }
 
+/* Cart action buttons */
+.cart-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.btn-clear,
+.btn-order {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.btn-clear {
+  background-color: #dc3545;
+}
+
+.btn-clear:hover {
+  background-color: #c82333;
+}
+
+.btn-order {
+  background-color: #28a745;
+}
+
+.btn-order:hover {
+  background-color: #218838;
+}
+
+/* Animations */
+@keyframes popupScale {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
