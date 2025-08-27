@@ -1,5 +1,6 @@
 import "../myStyles/Popup.css";
 import { toast } from "react-toastify";
+import { setCookie } from "../Jscookies"; //  to clear cookies
 
 export default function Popup(props) {
   if (props.Popupopen !== 1) return null;
@@ -29,6 +30,7 @@ export default function Popup(props) {
     }));
 
     props.updateProducts(cleared);
+    setCookie("cartItems", JSON.stringify([]), 7); // for clear cookie
     toast.info("Cart cleared!");
     props.Popupclose();
   }

@@ -5,9 +5,9 @@ import cartlogo from '../Images/cart.png'
 export default function Header(props) {
     return (
         <div className="container header">
-            <div className=" mx-w grid grid-3 nav">
+            <div className="mx-w grid grid-3 nav">
                 <div className="grid-sec amazon">
-                    <img src={Amazonlogo} />
+                    <img src={Amazonlogo} alt="Amazon Logo" />
                 </div>
                 <div className="grid-sec">
                     <ul>
@@ -17,19 +17,23 @@ export default function Header(props) {
                         <a><li>Contact</li></a>
                     </ul>
                 </div>
-                <div className="grid-sec cart">
-                    <div className="cart-icon" onClick={()=>{props.Popupopen()}}>
+                <div className="grid-sec cart-search">
+                   
+                    <input
+                        type="text"
+                        placeholder="Search products..."
+                        onChange={e => props.onSearchChange(e.target.value)}
+                        style={{ padding: '5px', fontSize: '1rem', marginRight: '10px' }}
+                    />
+                    
+                    <div className="cart-icon" onClick={() => props.Popupopen()}>
                         <img src={cartlogo} alt="Cart" />
                         {props.addedtocartcount > 0 && (
                             <span className="cart-count">{props.addedtocartcount}</span>
                         )}
                     </div>
                 </div>
-
-
-
             </div>
-           
         </div>
     )
 }
